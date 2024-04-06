@@ -1,0 +1,8 @@
+.cardContainer {
+  display: flex;
+  flex-wrap: wrap;
+  width: 24%;
+  height: 20rem;
+  background-color: red;
+  margin-bottom: 1rem;
+}

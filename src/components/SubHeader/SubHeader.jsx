@@ -18,7 +18,7 @@ export default function SubHeader({ data }) {
     <div className={styles.subHeader}>
       <div>
         <h1>PopShop</h1>
-        <p>1 Results</p>
+        <p>{data[0].length} Results</p>
       </div>
       <Box sx={{ minWidth: 120 }}>
         <FormControl fullWidth>

@@ -1,31 +1,34 @@
 import useDataFetcher from "../../hooks/useDataFetcher";
 import Header from "../../components/Header/Header";
-import ProductCard from "../../components/ProductCard/ProductCard";
 import SubHeader from "../../components/SubHeader/SubHeader";
+import Modal from "../../components/Modal/Modal";
+import { useState } from "react";
+import ProductsList from "../../components/ProductsList/ProductsList";
+import styles from "../../styles/HomePage.module.css";
 
 export default function HomePage() {
   const [data, isLoading, error] = useDataFetcher();
-
-  const iterateOverData = () => {
-    return data[0].map((productObj, idx) => {
-      return (
-        <div key={idx}>
-          <ProductCard productObj={productObj} />
-          <p></p>
-        </div>
-      );
-    });
-  };
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [modalData, setModalData] = useState("");
 
   if (isLoading) return <>Loading ....</>;
   if (error) return <>error {error.message}</>;
   if (data) {
     return (
-      <div>
+      <div className={styles.PageContainer}>
         <Header />
-        <div>
+        <div className={styles.mainContent}>
           <SubHeader data={data} />
-          <div>{iterateOverData()}</div>
+          <ProductsList
+            data={data}
+            setIsModalOpen={setIsModalOpen}
+            setModalData={setModalData}
+          />
+          <Modal
+            isModalOpen={isModalOpen}
+            setIsModalOpen={setIsModalOpen}
+            modalData={modalData}
+          />
         </div>
       </div>
     );
