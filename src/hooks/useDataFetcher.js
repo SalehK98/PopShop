@@ -1,12 +1,14 @@
 import { useState, useEffect } from "react";
+import sortDataByCategory from "../utils/sortDataByCategories";
 
 const fetchData = async (setIsLoading) => {
   setIsLoading(true);
   try {
     const response = await fetch("https://fakestoreapi.com/products");
     if (!response.ok) throw new Error("network response was not okay");
-    const data = await response.json();
-    return { data: data, error: null };
+    const rawData = await response.json();
+    const sortedData = sortDataByCategory(rawData);
+    return { data: [rawData, sortedData], error: null };
   } catch (error) {
     console.log("this is an error ", error, error.message);
     return { data: null, error };

@@ -1,15 +1,16 @@
-import React from "react";
 import useDataFetcher from "../../hooks/useDataFetcher";
 import Header from "../../components/Header/Header";
+import ProductCard from "../../components/ProductCard/ProductCard";
+import SubHeader from "../../components/SubHeader/SubHeader";
 
 export default function HomePage() {
   const [data, isLoading, error] = useDataFetcher();
 
   const iterateOverData = () => {
-    return data.map((productObj, idx) => {
+    return data[0].map((productObj, idx) => {
       return (
         <div key={idx}>
-          {productObj.title}, {productObj.price}
+          <ProductCard productObj={productObj} />
           <p></p>
         </div>
       );
@@ -21,16 +22,10 @@ export default function HomePage() {
   if (data) {
     return (
       <div>
-        page container
+        <Header />
         <div>
-          <Header />
-        </div>
-        <div>
-          main content<div>title and sort</div>
-          <div>
-            product
-            {/* {iterateOverData()} */}
-          </div>
+          <SubHeader data={data} />
+          <div>{iterateOverData()}</div>
         </div>
       </div>
     );
