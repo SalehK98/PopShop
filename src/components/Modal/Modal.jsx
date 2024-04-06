@@ -42,7 +42,6 @@ export default function Modal({ isModalOpen, setIsModalOpen, modalData }) {
           document.body.style.overflow = "auto";
         }}
       >
-        {/* <LinkEditorModalForm /> */}
         <ProductModalCard
           setIsModalOpen={setIsModalOpen}
           modalData={modalData}

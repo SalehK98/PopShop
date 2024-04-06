@@ -6,7 +6,6 @@
   margin-bottom: 1rem;
   border: 0.125rem solid rgb(240, 240, 240);
   border-radius: 0.75rem;
-  /* overflow: hidden; Hide overflowing content */
 }
 
 .productImg {
@@ -17,12 +16,10 @@
 }
 
 .productBasicInfo {
-  /* margin: auto; */
   padding: 0 1rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  /* align-items: flex-start; */
   width: 95%;
 }
 
@@ -33,7 +30,6 @@
 }
 
 .productBasicInfo .title {
-  /* height: 30%; */
   width: 90%;
   overflow: hidden;
   text-overflow: ellipsis; /* Display ellipsis for overflow */
