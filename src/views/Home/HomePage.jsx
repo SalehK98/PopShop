@@ -1,6 +1,6 @@
 import React from "react";
 import useDataFetcher from "../../hooks/useDataFetcher";
-import SearchBar from "../../components/SearchBar/SearchBar";
+import Header from "../../components/Header/Header";
 
 export default function HomePage() {
   const [data, isLoading, error] = useDataFetcher();
@@ -23,8 +23,7 @@ export default function HomePage() {
       <div>
         page container
         <div>
-          searchbar header
-          <SearchBar />
+          <Header />
         </div>
         <div>
           main content<div>title and sort</div>

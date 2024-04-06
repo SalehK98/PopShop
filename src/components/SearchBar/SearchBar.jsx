@@ -49,11 +49,10 @@ export default function SearchBar() {
   return (
     <div className={styles.searchContainer}>
       <div className={styles.iconWrapper}>
-        <IconContext.Provider
+        <IconContext.Provider // Icon context is used to customize the styling of icons rendered by react-icons components.
           value={{
             size: "1.7rem",
             color: "#878787",
-            // className: ".reactSearchIcon",
           }}
         >
           <BsSearch />
@@ -63,9 +62,6 @@ export default function SearchBar() {
         type="search"
         placeholder={" Find any thing home..."}
         className={styles.searchInput}
-        // size="15"
-        // spellCheck
-        // autoCorrect="on"
         onChange={handleSearchTermChange}
         value={searchTerm}
       />
