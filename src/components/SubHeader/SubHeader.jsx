@@ -6,13 +6,16 @@ import FormControl from "@mui/material/FormControl";
 import Select from "@mui/material/Select";
 import { useState } from "react";
 
-export default function SubHeader({ data }) {
-  const [category, setCategory] = useState("All Categories");
+export default function SubHeader({
+  data,
+  currentCategory,
+  setCurrentCategory,
+}) {
   const categories = Object.keys(data[1]);
   categories.push("All Categories");
 
   const handleChange = (event) => {
-    setCategory(event.target.value);
+    setCurrentCategory(event.target.value);
   };
   return (
     <div className={styles.subHeader}>
@@ -26,7 +29,7 @@ export default function SubHeader({ data }) {
           <Select
             labelId="demo-simple-select-label"
             id="demo-simple-select"
-            value={category}
+            value={currentCategory}
             label="Sort by"
             onChange={handleChange}
           >

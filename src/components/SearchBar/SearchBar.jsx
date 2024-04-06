@@ -2,16 +2,9 @@ import styles from "../../styles/SearchBar.module.css";
 import { IconContext } from "react-icons";
 import { BsSearch } from "react-icons/bs";
 import { useState } from "react";
-// import { useUserDataContext } from "../../contexts/userDataContext";
-// import { useSearchContext } from "../../contexts/SearchContext";
-// import * as ActionTypes from "../../contexts/actionTypes";
 // import preformLinkSearch from "../../helpers/preformSearch";
 
-export default function SearchBar() {
-  const [searchTerm, setSearchTerm] = useState("");
-  //   const { searchDispatch } = useSearchContext();
-
-  //   const { userDataState, userDataDispatch } = useUserDataContext();
+export default function SearchBar({ searchTerm, setSearchTerm }) {
   //   const categoriesWithLinks = userDataState.categoriesWithLinks;
   //   const prevActiveCategory = userDataState.prevActiveCategory;
 
