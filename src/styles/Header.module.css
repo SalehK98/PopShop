@@ -1,0 +1,9 @@
+.header {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.basketIconWrapper {
+  margin: 1rem;
+}

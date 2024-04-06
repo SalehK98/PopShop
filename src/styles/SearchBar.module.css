@@ -1,0 +1,36 @@
+/* SearchBar.module.css */
+
+.searchContainer {
+  display: flex;
+  align-items: center;
+  border: 0.0625rem solid #ccc;
+  border-radius: 0.5rem;
+  background-color: #fff;
+  box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.1);
+  width: 70%;
+  height: 3.3rem;
+  margin: 0 auto;
+}
+
+.iconWrapper {
+  width: 3.1rem;
+  height: 3.1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #fff;
+  border-radius: 0.5rem;
+}
+
+.reactSearchIcon {
+  size: 2rem;
+  color: #878787;
+}
+
+.searchInput {
+  flex-grow: 1;
+  border: none;
+  outline: none;
+  font-size: 1.2rem;
+  font-weight: 600;
+}
