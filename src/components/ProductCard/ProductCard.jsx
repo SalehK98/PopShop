@@ -1,4 +1,4 @@
-import styles from "../../styles/ProductCard.module.css";
+import styles from "../../styles/ProductCardBox.module.css";
 
 export default function ProductCard({
   productObj,
