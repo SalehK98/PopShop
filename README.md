@@ -18,19 +18,29 @@ PopShop is a simple e-commerce web application developed as a home assignment fo
 
 1. Clone the repository:
 
-1. Navigate to the project directory:
-1. ```cd
+   ```
+   git@github.com:SalehK98/PopShop.git
+   ```
+
+2. Navigate to the project director:
+
+   ```cd
    cd PopShop
    ```
-1. Install dependencies:
+
+3. Install dependencies:
+
    ```npm
    npm install
    ```
-1. Start the development server:
+
+4. Start the development server:
+
    ```npm
    npm run dev
    ```
-1. Open your browser and visit `http://localhost:5173` to view the application.
+
+5. Open your browser and visit `http://localhost:5173` to view the application.
 
 ## Usage
 
