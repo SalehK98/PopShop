@@ -4,10 +4,10 @@ import SearchBar from "../SearchBar/SearchBar";
 import { IconContext } from "react-icons";
 import { SlBasket } from "react-icons/sl";
 
-export default function () {
+export default function ({ searchTerm, setSearchTerm }) {
   return (
     <div className={styles.header}>
-      <SearchBar />
+      <SearchBar searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
       <div className={styles.basketIconWrapper}>
         <IconContext.Provider // Icon context is used to customize the styling of icons rendered by react-icons components.
           value={{

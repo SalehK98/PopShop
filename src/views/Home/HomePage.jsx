@@ -8,21 +8,31 @@ import styles from "../../styles/HomePage.module.css";
 
 export default function HomePage() {
   const [data, isLoading, error] = useDataFetcher();
+
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [modalData, setModalData] = useState("");
+
+  const [currentCategory, setCurrentCategory] = useState("All Categories");
+  const [searchTerm, setSearchTerm] = useState("");
 
   if (isLoading) return <>Loading ....</>;
   if (error) return <>error {error.message}</>;
   if (data) {
     return (
       <div className={styles.PageContainer}>
-        <Header />
+        <Header searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
         <div className={styles.mainContent}>
-          <SubHeader data={data} />
+          <SubHeader
+            data={data}
+            currentCategory={currentCategory}
+            setCurrentCategory={setCurrentCategory}
+          />
           <ProductsList
             data={data}
             setIsModalOpen={setIsModalOpen}
             setModalData={setModalData}
+            currentCategory={currentCategory}
+            searchTerm={searchTerm}
           />
           <Modal
             isModalOpen={isModalOpen}
