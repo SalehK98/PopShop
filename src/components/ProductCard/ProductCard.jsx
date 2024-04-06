@@ -11,12 +11,15 @@ export default function ProductCard({
   };
   return (
     <div className={styles.cardContainer} onClick={handleOpenProduct}>
-      <img src={productObj.image} style={{ width: "8rem" }} />
-      <h2>{productObj.category}</h2>
-      <span>{productObj.title}</span>
-      <span>From ${productObj.price}</span>
-      <p></p>
-      <span>rate {productObj.rating.rate}</span>
+      <img src={productObj.image} className={styles.productImg} />
+      <div className={styles.productBasicInfo}>
+        <h3>{productObj.category}</h3>
+        <div className={styles.Wrapper}>
+          <p className={styles.title}>{productObj.title}</p>
+        </div>
+        <p>From ${productObj.price}</p>
+        <p>rate {productObj.rating.rate}</p>
+      </div>
     </div>
   );
 }
