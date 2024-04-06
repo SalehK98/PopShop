@@ -1,5 +1,6 @@
 import React from "react";
 import useDataFetcher from "../../hooks/useDataFetcher";
+import SearchBar from "../../components/SearchBar/SearchBar";
 
 export default function HomePage() {
   const [data, isLoading, error] = useDataFetcher();
@@ -18,7 +19,21 @@ export default function HomePage() {
   if (isLoading) return <>Loading ....</>;
   if (error) return <>error {error.message}</>;
   if (data) {
-    console.log("after fetch and inside homepage", data);
-    return <>{iterateOverData()}</>;
+    return (
+      <div>
+        page container
+        <div>
+          searchbar header
+          <SearchBar />
+        </div>
+        <div>
+          main content<div>title and sort</div>
+          <div>
+            product
+            {/* {iterateOverData()} */}
+          </div>
+        </div>
+      </div>
+    );
   }
 }
